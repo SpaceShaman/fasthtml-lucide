@@ -12,8 +12,16 @@
 
 Lucide SVG icons for [FastHTML](https://github.com/AnswerDotAI/fasthtml). Icons are bundled in the Python package: no Node.js, JavaScript, CDN or static-file setup is needed in your application.
 
+Install with uv:
+
 ```sh
 uv add fasthtml-lucide
+```
+
+Or with pip:
+
+```sh
+pip install fasthtml-lucide
 ```
 
 ```python
