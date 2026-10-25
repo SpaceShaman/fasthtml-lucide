@@ -38,8 +38,8 @@ jobs:
         run: |
           uv build
           uv venv /tmp/lucide-test
-          uv pip install --python /tmp/lucide-test/bin/python dist/*.whl
-          /tmp/lucide-test/bin/python -m unittest discover -s tests
+          uv pip install --python /tmp/lucide-test/bin/python --group test dist/*.whl
+          /tmp/lucide-test/bin/python -m pytest tests
           uv run --no-project python scripts/check_dist.py
       - name: Commit version and tag
         if: steps.check.outputs.release == 'true'

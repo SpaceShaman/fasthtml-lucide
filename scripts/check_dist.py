@@ -26,6 +26,8 @@ def assets(wheel):
 
 
 uv = shutil.which("uv")
+if uv is None:
+    raise RuntimeError("uv is required to verify distributions; add it to PATH")
 (wheel,) = Path("dist").glob("*.whl")
 (sdist,) = Path("dist").glob("*.tar.gz")
 expected = assets(wheel)

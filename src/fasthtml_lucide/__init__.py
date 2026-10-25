@@ -16,7 +16,7 @@ ET.register_namespace("", "http://www.w3.org/2000/svg")
 def _icon_source(name: str) -> str:
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
         raise ValueError(f"Invalid icon name: {name}")
-    resource = files(__package__).joinpath("icons", f"{name}.svg")
+    resource = files("fasthtml_lucide").joinpath("icons", f"{name}.svg")
     try:
         return resource.read_text(encoding="utf-8")
     except FileNotFoundError:

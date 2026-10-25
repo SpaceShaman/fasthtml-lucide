@@ -12,6 +12,9 @@ license = "MIT"
 license-files = ["LICENSE"]
 dependencies = ["python-fasthtml>=0.14.13"]
 
+[dependency-groups]
+test = ["pytest"]
+
 [project.urls]
 Repository = "https://github.com/SpaceShaman/fasthtml-lucide"
 
