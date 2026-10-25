@@ -12,6 +12,8 @@
 
 Lucide SVG icons for [FastHTML](https://github.com/AnswerDotAI/fasthtml). Icons are bundled in the Python package: no Node.js, JavaScript, CDN or static-file setup is needed in your application.
 
+## Installation
+
 Install with uv:
 
 ```sh
@@ -24,6 +26,8 @@ Or with pip:
 pip install fasthtml-lucide
 ```
 
+## Usage
+
 ```python
 from fasthtml.common import Button
 from fasthtml_lucide import Icon
@@ -33,13 +37,33 @@ Button(Icon("sun", cls="size-5 text-yellow-500"), "Light mode")
 
 `Icon(name, *, cls="", size=24)` accepts kebab-case Lucide names and returns an inline SVG. Colors inherit through `currentColor`. Original SVG classes are kept. Invalid or unknown names raise `ValueError`.
 
-The generated `IconName` type lists every bundled icon, so type checkers can flag misspelled names and editors can suggest valid ones. You can also import `IconName` to annotate your own variables and parameters.
+```python
+Icon("settings", size=20)
+Icon("heart", cls="text-red-500")
+```
+
+Icons are decorative (`aria-hidden="true"`), so icon-only buttons should have an accessible label on the button itself.
+
+### Typed icon names
+
+The package generates an `IconName` type containing every available icon name, providing editor autocomplete and type checking for misspelled names.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/SpaceShaman/fasthtml-lucide/master/assets/autocomplete.png" alt="Editor autocomplete suggesting Lucide icon names from the generated IconName type">
 </p>
 
-Icons are decorative (`aria-hidden="true"`). Give icon-only buttons an accessible label on the button itself.
+You can also use the type in your own components:
+
+```python
+from fasthtml.common import Button
+from fasthtml_lucide import Icon, IconName
+
+
+def IconButton(icon: IconName, label: str):
+    return Button(Icon(icon), label)
+```
+
+### Automatic updates
 
 The library is automatically updated to the latest stable `lucide-static` release on npm, with checks running daily. The PyPI version matches the npm version; Python-only fixes may add a `.postN` suffix.
 
@@ -77,6 +101,11 @@ uv version --bump post --frozen --no-sync
 ```
 
 Commit your fix and `pyproject.toml`, push to the default branch, then select **Actions → Release → Run workflow** on GitHub. The workflow creates the tag and publishes to PyPI. The Lucide version stays the same unless a newer npm release is available.
+
+## Links
+
+- [GitHub repository](https://github.com/SpaceShaman/fasthtml-lucide)
+- [PyPI package](https://pypi.org/project/fasthtml-lucide/)
 
 ## License
 
