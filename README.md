@@ -54,7 +54,15 @@ uv run --no-project python scripts/check_dist.py
 
 The [Release workflow](.github/workflows/release.yml) checks npm daily and can also be run manually. It updates the package version, builds and tests the release, creates a Git tag and publishes to PyPI using Trusted Publishing.
 
-For a Python-only fix, use a `.postN` version (for example, `1.61.0.post1`), commit and push the change, then run the workflow manually. The bundled Lucide version remains `1.61.0`.
+### Manual releases
+
+For a Python-only fix, increment the post-release version (for example, `1.61.0` → `1.61.0.post1` → `1.61.0.post2`):
+
+```sh
+uv version --bump post --frozen --no-sync
+```
+
+Commit your fix and `pyproject.toml`, push to the default branch, then select **Actions → Release → Run workflow** on GitHub. The workflow creates the tag and publishes to PyPI. The Lucide version stays the same unless a newer npm release is available.
 
 ## License
 
