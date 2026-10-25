@@ -1,10 +1,11 @@
 from importlib.resources import files
+from typing import get_args, get_type_hints
 from xml.etree import ElementTree as ET
 
 import pytest
 from fasthtml.common import Div, to_xml
 
-from fasthtml_lucide import Icon
+from fasthtml_lucide import Icon, IconName
 
 
 def test_rendering():
@@ -42,3 +43,14 @@ def test_attributes_are_escaped():
     svg = ET.fromstring(str(Icon("sun", cls=cls)))
     assert svg.get("onload") is None
     assert svg.get("class", "").endswith(cls)
+
+
+def test_icon_names_match_bundled_icons():
+    names = get_args(IconName)
+    expected = sorted(
+        resource.name.removesuffix(".svg")
+        for resource in files("fasthtml_lucide").joinpath("icons").iterdir()
+        if resource.name.endswith(".svg")
+    )
+    assert list(names) == expected
+    assert get_type_hints(Icon)["name"] == IconName

@@ -7,7 +7,9 @@ from xml.etree import ElementTree as ET
 
 from fasthtml.common import NotStr
 
-__all__ = ["Icon"]
+from ._names import IconName
+
+__all__ = ["Icon", "IconName"]
 
 ET.register_namespace("", "http://www.w3.org/2000/svg")
 
@@ -23,7 +25,7 @@ def _icon_source(name: str) -> str:
         raise ValueError(f"Unknown Lucide icon: {name}") from None
 
 
-def Icon(name: str, *, cls: str = "", size: int = 24) -> NotStr:
+def Icon(name: IconName, *, cls: str = "", size: int = 24) -> NotStr:
     """Render a decorative inline SVG using a kebab-case Lucide icon name."""
     svg = ET.fromstring(_icon_source(name))
     svg.set("width", str(size))

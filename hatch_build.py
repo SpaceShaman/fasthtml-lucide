@@ -71,9 +71,20 @@ class CustomBuildHook(BuildHookInterface):
                 shutil.copyfile(source / "LICENSE", license_file)
                 marker.write_text(lucide_version + "\n", encoding="utf-8")
 
+        names = sorted(svg.stem for svg in icons.glob("*.svg"))
+        (package / "_names.py").write_text(
+            "# Generated from bundled SVGs; do not edit.\n"
+            "from typing import Literal, TypeAlias\n\n"
+            "IconName: TypeAlias = Literal[\n"
+            + "".join(f"    {json.dumps(name)},\n" for name in names)
+            + "]\n",
+            encoding="utf-8",
+        )
+
         build_data["artifacts"].extend(
             [
                 "src/fasthtml_lucide/icons/**",
+                "src/fasthtml_lucide/_names.py",
                 "src/fasthtml_lucide/lucide-version.txt",
                 "src/fasthtml_lucide/LUCIDE-LICENSE",
             ]

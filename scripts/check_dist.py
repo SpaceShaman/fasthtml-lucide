@@ -19,6 +19,8 @@ def assets(wheel):
             for name in names
             if name.startswith("fasthtml_lucide/")
         }
+        assert "fasthtml_lucide/_names.py" in bundled
+        assert "fasthtml_lucide/py.typed" in bundled
         assert "fasthtml_lucide/icons/sun.svg" in bundled
         assert "fasthtml_lucide/LUCIDE-LICENSE" in bundled
         assert "fasthtml_lucide/lucide-version.txt" in bundled
