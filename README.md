@@ -31,7 +31,13 @@ from fasthtml_lucide import Icon
 Button(Icon("sun", cls="size-5 text-yellow-500"), "Light mode")
 ```
 
-`Icon(name, *, cls="", size=24)` accepts kebab-case Lucide names and returns an inline SVG. Colors inherit through `currentColor`. Original SVG classes are kept. Invalid or unknown names raise `ValueError`. The generated `IconName` type lists every bundled icon, so type checkers can flag misspelled names and editors can suggest valid ones. You can also import `IconName` to annotate your own variables and parameters.
+`Icon(name, *, cls="", size=24)` accepts kebab-case Lucide names and returns an inline SVG. Colors inherit through `currentColor`. Original SVG classes are kept. Invalid or unknown names raise `ValueError`.
+
+The generated `IconName` type lists every bundled icon, so type checkers can flag misspelled names and editors can suggest valid ones. You can also import `IconName` to annotate your own variables and parameters.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SpaceShaman/fasthtml-lucide/master/assets/autocomplete.png" alt="Editor autocomplete suggesting Lucide icon names from the generated IconName type">
+</p>
 
 Icons are decorative (`aria-hidden="true"`). Give icon-only buttons an accessible label on the button itself.
 
