@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fasthtml-lucide"
+version = "1.61.0"
+description = "Lucide SVG icons for FastHTML"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["python-fasthtml>=0.14.13"]
+
+[project.urls]
+Repository = "https://github.com/SpaceShaman/fasthtml-lucide"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fasthtml_lucide"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/hatch_build.py", "/pyproject.toml", "/README.md", "/LICENSE", "/tests"]
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
