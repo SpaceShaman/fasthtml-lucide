@@ -67,6 +67,8 @@ def IconButton(icon: IconName, label: str):
 
 The library is automatically updated to the latest stable `lucide-static` release on npm, with checks running daily. The PyPI version matches the npm version; Python-only fixes may add a `.postN` suffix.
 
+For Tailwind CSS integration with persistent watch mode, see [fasthtml-tailwindcss](https://github.com/SpaceShaman/fasthtml-tailwindcss).
+
 ## Development
 
 ### Build
