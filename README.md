@@ -4,7 +4,7 @@
 [![Release](https://img.shields.io/github/actions/workflow/status/SpaceShaman/fasthtml-lucide/release.yml?label=release)](https://github.com/SpaceShaman/fasthtml-lucide/actions/workflows/release.yml)
 [![Python versions](https://img.shields.io/pypi/pyversions/fasthtml-lucide)](https://pypi.org/project/fasthtml-lucide/)
 [![PyPI version](https://img.shields.io/pypi/v/fasthtml-lucide)](https://pypi.org/project/fasthtml-lucide/)
-[![FastHTML](https://img.shields.io/badge/FastHTML-Answer.AI-7854F7)](https://github.com/AnswerDotAI/fasthtml)
+[![FastHTML](https://img.shields.io/badge/framework-FastHTML-7854F7)](https://github.com/AnswerDotAI/fasthtml)
 [![Lucide](https://img.shields.io/badge/icons-Lucide-F56565)](https://lucide.dev/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Pytest](https://img.shields.io/badge/testing-pytest-0A9EDC?logo=pytest)](https://docs.pytest.org/)
