@@ -18,7 +18,7 @@ if not re.fullmatch(r"\d+\.\d+\.\d+", latest):
 if tuple(map(int, latest.split("."))) > tuple(
     map(int, current.split(".post")[0].split("."))
 ):
-    subprocess.run(["uv", "version", latest, "--frozen", "--no-sync"], check=True)
+    subprocess.run(["uv", "version", latest, "--frozen"], check=True)
     current = latest
 
 try:

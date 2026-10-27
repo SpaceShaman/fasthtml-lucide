@@ -99,7 +99,7 @@ The [Release workflow](.github/workflows/release.yml) checks npm daily and can a
 For a Python-only fix, increment the post-release version (for example, `1.61.0` → `1.61.0.post1` → `1.61.0.post2`):
 
 ```sh
-uv version --bump post --frozen --no-sync
+uv version --bump post --frozen
 ```
 
 Commit your fix and `pyproject.toml`, push to the default branch, then select **Actions → Release → Run workflow** on GitHub. The workflow creates the tag and publishes to PyPI. The Lucide version stays the same unless a newer npm release is available.
