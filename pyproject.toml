@@ -1,6 +1,6 @@
 [project]
 name = "fasthtml-lucide"
-version = "1.62.0"
+version = "1.63.0"
 description = "Lucide SVG icons for FastHTML."
 readme = "README.md"
 requires-python = ">=3.11"
