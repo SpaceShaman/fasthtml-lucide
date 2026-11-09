@@ -65,7 +65,7 @@ def IconButton(icon: IconName, label: str):
 
 ### Automatic updates
 
-The library is automatically updated to the latest stable `lucide-static` release on npm, with checks running daily. The PyPI version matches the npm version; Python-only fixes may add a `.postN` suffix.
+The library is automatically updated to the latest stable `lucide-static` release on npm, with checks running weekly. The PyPI version matches the npm version; Python-only fixes may add a `.postN` suffix.
 
 For Tailwind CSS integration with persistent watch mode, see [fasthtml-tailwindcss](https://github.com/SpaceShaman/fasthtml-tailwindcss).
 
@@ -92,7 +92,7 @@ uv run --no-project python scripts/check_dist.py
 
 ### Automated releases
 
-The [Release workflow](.github/workflows/release.yml) checks npm daily and can also be run manually. It updates the package version, builds and tests the release, creates a Git tag and publishes to PyPI using Trusted Publishing.
+The [Release workflow](.github/workflows/release.yml) checks npm weekly and can also be run manually. It updates the package version, builds and tests the release, creates a Git tag and publishes to PyPI using Trusted Publishing.
 
 ### Manual releases
 
